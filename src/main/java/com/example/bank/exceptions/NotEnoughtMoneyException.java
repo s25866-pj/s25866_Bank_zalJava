@@ -1,10 +1,9 @@
-package com.example.s25866_bank.exceptions;
-
+package com.example.bank.exceptions;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class UserValidationException extends RuntimeException{
+public class NotEnoughtMoneyException extends RuntimeException {
     private final String message;
+    private final long value;
 }

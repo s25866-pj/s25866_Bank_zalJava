@@ -1,9 +1,8 @@
-package com.example.s25866_bank.controller;
+package com.example.bank.controller;
 
-import com.example.s25866_bank.exceptions.UserValidationException;
-import com.example.s25866_bank.model.Response;
-import com.example.s25866_bank.model.User;
-import com.example.s25866_bank.service.UserService;
+import com.example.bank.model.Response;
+import com.example.bank.model.User;
+import com.example.bank.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,5 +48,14 @@ private UserService userService;
         List<User> userList= userService.getAllUsers();
         return ResponseEntity.ok(userList);
     }
+    @PostMapping("/saveToDB")
+    public void saveToDatabase(){
+        userService.saveDataToDB();
+    }
+    @PostMapping ("/readFromDB")
+    public ResponseEntity <List<User>> readFromDataBase(){
 
+        List<User> userList= userService.readFromDataBase();
+        return ResponseEntity.ok(userList);
+    }
 }

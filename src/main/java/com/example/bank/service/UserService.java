@@ -1,14 +1,14 @@
-package com.example.s25866_bank.service;
+package com.example.bank.service;
 
-import com.example.s25866_bank.exceptions.UserValidationException;
-import com.example.s25866_bank.model.Response;
-import com.example.s25866_bank.model.User;
-import com.example.s25866_bank.repository.UserRepository;
+import com.example.bank.exceptions.UserValidationException;
+import com.example.bank.model.Response;
+import com.example.bank.model.User;
+import com.example.bank.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static com.example.s25866_bank.model.Response.status.*;
+import static com.example.bank.model.Response.status.*;
 
 @Service
 public class UserService {
@@ -72,5 +72,13 @@ public class UserService {
         return ACCEPTED;
 
 
+    }
+
+    public void saveDataToDB() {
+        userRepository.saveDataToDB();
+    }
+
+    public List<User> readFromDataBase() {
+        return userRepository.readFromDataBase();
     }
 }

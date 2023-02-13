@@ -1,4 +1,4 @@
-package com.example.s25866_bank.model;
+package com.example.bank.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

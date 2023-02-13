@@ -1,4 +1,4 @@
-package com.example.s25866_bank.model;
+package com.example.bank.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,4 +10,5 @@ public class User {
     private final String name;
     private final String surrname;
     private  long money;
+    private long pesel;
 }
